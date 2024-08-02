@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux'
 
 const Child3 = () => {
     // const { count , setCount } = useContext(CountContext);
-    const { auth } = useSelector((state)=>state.auth)
+    const { auth , role } = useSelector((state)=>state.auth)
     console.log(auth)
   return (
-    <div className='bg-green-300 p-10'>Child3 {auth}</div>
+    <div className='bg-green-300 p-10'>Child3 {auth ? "true" : "false"} {role}</div>
   )
 }
 

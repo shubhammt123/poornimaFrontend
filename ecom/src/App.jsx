@@ -7,6 +7,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Router from "./Router";
 import { CountContext } from "./context/CountContext";
+import { useDispatch } from "react-redux";
+import { login } from "./redux/slices/authSlice";
 
 function App() {
   // firstName - camel case -- variable , state  , function  , objectkeys
@@ -14,6 +16,8 @@ function App() {
   // first_name , FIRST_NAME- snackcase  -- global variables in reactjs
   const [count , setCount] = useState(1);
   const [data , setData] = useState([]);
+
+  const dispatch = useDispatch();
 
   // const  { count, setCount  } = useContext(CountContext);
   console.log(data);
@@ -64,7 +68,7 @@ function App() {
       }
 
   const handleLogin = ()=>{
-
+    dispatch(login("admin"));
   }
   return (
     <div>
